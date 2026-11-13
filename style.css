@@ -6,6 +6,18 @@ body {
     justify-content: center;
     padding-top: 50px;
     margin: 0;
+    gap: 20px;                
+    align-items: flex-start; 
+}
+
+
+.sidebar {
+    background-color: #2d2d2d;
+    padding: 25px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 
@@ -49,8 +61,9 @@ ul {
 }
 li {
     display: flex;
-    justify-content: space-bettween;
-    align-items: 12px;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 8px;           
     padding: 12px;
     background: #3d3d3d;
     margin-bottom: 8px;
@@ -68,4 +81,12 @@ li span {cursor: pointer; flex: 1; }
     padding: 5px 10px;
     font-size: 12px;
 }
-.btn-del:hover { backgroun-color: #c82333; }
+.btn-del:hover { background-color: #c82333; } 
+
+
+.btn-edit {
+    background-color: #198754;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.btn-edit:hover { background-color: #157347; }

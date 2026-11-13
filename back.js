@@ -16,16 +16,27 @@ async criarTarefa(titulo) {
         concluida: false
 };
 tarefas.push(novaTarefa);
-return novatarefa;
+return novaTarefa;
 },
 async alternarStatus(id) {
     await simularRede();
     const tarefa = tarefas.find(t => t.id === id);
     if (tarefa){
-        tarefa.concluida = !tarefa.concluido;
+        tarefa.concluida = !tarefa.concluida;
     }
     return tarefa;
-}
+},  
+
+
+async editarTarefa(id, novoTitulo) {
+    await simularRede();
+    const tarefa = tarefas.find(t => t.id === id);
+    if (tarefa) {
+        tarefa.titulo = novoTitulo;
+    }
+    return tarefa;
+},
+
 async deleteTarefa(id) {
     await simularRede();
     tarefas = tarefas.filter(t => t.id !== id);
