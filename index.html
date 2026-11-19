@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo13 — Sistema de Gerenciamento de Tarefas</title>
+  <!-- Fontes do Estudo de Caso: Inter e JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="cartao bloco-esquerdo">
+      <div class="marca">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="degradeTech" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
+            </linearGradient>
+          </defs>
+          <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="url(#degradeTech)"/>
+          <text x="11" y="39" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="24" font-weight="bold">{</text>
+          <text x="41" y="39" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="24" font-weight="bold">}</text>
+          <path d="M24 33 L30 39 L41 26" stroke="#10B981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <div class="nome-empresa">
+          <span class="nome-tech">Tech</span>Solutions
+        </div>
+      </div>
+
+      <h2 class="titulo-lateral">Lista de tarefas</h2>
+      <p class="slogan">Do backlog ao deploy, sem perder o fio.</p>
+
+      <div class="lista-filtros">
+        <button type="button" id="filtro-Todas" class="btn-filtro btn-filtro-ativo" onclick="filtrarTarefas('Todas')">Todas</button>
+        <button type="button" id="filtro-A fazer" class="btn-filtro" onclick="filtrarTarefas('A fazer')">A fazer</button>
+        <button type="button" id="filtro-Fazendo" class="btn-filtro" onclick="filtrarTarefas('Fazendo')">Fazendo</button>
+        <button type="button" id="filtro-Feito" class="btn-filtro" onclick="filtrarTarefas('Feito')">Feito</button>
+      </div>
+
+      <p class="dica">
+        Clique em qualquer tarefa para mudar a categoria: <strong>A fazer</strong> &rarr; <strong>Fazendo</strong> &rarr; <strong>Feito</strong>.
+      </p>
+
+      <button type="button" class="btn-limpar" onclick="limparFeitas()">Limpar Feitas</button>
+    </div>
+
+    <div class="cartao bloco-direito">
+      <h1 class="titulo-principal">Minhas Tarefas</h1>
+
+      <div class="form-tarefa">
+        <input type="text" id="inputTarefa" class="campo-texto" placeholder="Digite uma nova tarefa...">
+        <button type="button" class="btn-adicionar" onclick="adicionarTarefa()">Adicionar</button>
+      </div>
+
+      <div id="listaTarefas" class="lista-tarefas"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
